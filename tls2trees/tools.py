@@ -152,7 +152,7 @@ def load_file(filename, additional_headers=False, verbose=False):
         #        pc = np.vstack((pc, getattr(inFile, header)))
         #    else:
         #        headers.drop(header)
-        pc = pd.DataFrame(data=pc, columns=['x', 'y', 'z'])
+        pc = pd.DataFrame(data=pc.T, columns=['x', 'y', 'z'])
 
     elif file_extension == '.ply':
         pc = ply_io.read_ply(filename)
